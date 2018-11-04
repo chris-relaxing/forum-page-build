@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:800|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <style>
+    body {
+      background-color: #222;
+      height: 100%;
+      font-family: 'Open Sans', sans-serif;
+      /* font-family: 'Oswald', sans-serif; */
+      font-size: 12px;
+      margin-top: 8px;
+      margin-bottom: 0px;
+      padding: 0;
+      border: 0;
+    }
+    .container {
+      height: 100%;
+      max-width: 1200px;
+      margin: auto;
+      background-color: #eee;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      height: 55px;
+      background-color: #eee;
+      margin: 0px 40px;
+      display: grid;
+      grid-template-columns: 40px auto 160px 160px 100px 220px;
+      flex: 1;
+    }
+
+    .header1, .header2, .header3, .header4, .header5, .header6 {
+      /* border: 1px solid red; */
+    }
+
+    .header6 {
+      text-align: right;
+    }
+
+    .hamburger-menu{
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .weather-icon{
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+    .content-top {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .content-top-article {
+      display: flex;
+      background-color: #fff;
+      margin: 0px 40px;
+      flex: 1;
+      display: grid;
+      grid-template-columns: auto 328px;
+    }
+    .top-ad {
+      margin: 0px 40px;
+      flex: 1;
+    }
+
+    .content-top-article-img {
+      flex: 1;
+    }
+
+    .content-top-article-right{
+      flex: 1;
+      background-color: #fff;
+      border-top: 5px solid #002699;
+    }
+    .fcc{
+      margin-top: 10px;
+      margin-bottom: 0px;
+    }
+
+    .article-box{
+      border: none;
+      margin: 20px;
+    }
+
+    .blue-header {
+      color: #0052cc;
+      font-weight: bold;
+    }
+
+    .blue-header a:visited {
+      color: #0052cc;
+      font-weight: bold;
+    }
+
+    .blue-header-inline {
+      color: #0052cc;
+      font-weight: bold;
+      margin: 0px;
+    }
+
+    .blue-header-inline a:visited {
+      color: #0052cc;
+      font-weight: bold;
+      line-height: 26px;
+    }
+
+    .article-title {
+      font-weight: bold;
+      font-size: 22px;
+    }
+    .article-link {
+      color: black;
+    }
+
+    .content-body{
+      flex: 1;
+    }
+
+    .body-container {
+      margin: 15px 40px;
+      background-color: #fff;
+      border-top: 10px solid #ddd;
+      height: 3210px;
+      display: flex;
+    }
+
+    .bottom-ad {
+      flex: 1;
+    }
+
+    .bottom-ad-container {
+      margin: 30px 40px 0px 40px;
+      background-color: #fff;
+      border-top: 10px solid #ddd;
+    }
+    .footer {
+      height: 400px;
+      background-color: black;
+      flex: 1;
+      /* align-self: flex-end; */
+    }
+    h5 {
+      font-size: 12px;
+    }
+
+    .body-grid {
+      display: flex;
+      height: 98%;
+      display: grid;
+      grid-template-columns: auto 250px;
+      grid-column-gap: 2px;
+      margin: 30px;
+      flex: 1;
+    }
+
+    .ad-column {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      flex: 1;
+    }
+
+    .ad-img {
+      width: 100%;
+    }
+
+    .content-column {
+      flex: 1;
+    }
+
+    .ad-graphics {
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+
+    .footer-box {
+      margin: 0px 80px 0px 80px;
+      height: 92%;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-rows: auto auto;
+    }
+
+    .footer-columns {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+    }
+
+    .footer-col {
+      color: white;
+      font-size: 13px;
+    }
+
+    .footer-socials {
+      font-size: 14px;
+      color: white;
+    }
+
+    .white-text {
+      color: white;
+      font-size: 12px;
+    }
+
+    .white-links {
+      color: white;
+      margin-bottom: 15px;
+      line-height: 24px;
+      font-size: 12px;
+    }
+
+    .white-links:hover {
+      color: #0052cc;
+    }
+
+    .hr {
+      width: 100%;
+      border-top: 2px solid #222;
+    }
+
+    .content-column-section1 {
+      height: 1000px;
+    }
+
+    .section1-grid {
+      display: grid;
+      grid-template-columns: 250px auto;
+      grid-column-gap: 25px;
+    }
+
+    .section1-left-column {
+      vertical-align: top;
+    }
+    .section1-right-column {
+      margin-right: 25px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section1-right-article1,
+    .section1-right-article2 {
+      flex: 1;
+    }
+
+    .section1-right-column-img1 {
+      /* flex: 1; */
+    }
+
+    .section1-right-column-img2 {
+      /* flex: 1; */
+    }
+
+    .section1-right-article2 {
+      margin-top: 25px;
+    }
+
+    .blue-section-header {
+      height: 30px;
+      width: 250px;
+      background-color: #0052cc;
+      text-align: center;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 30px;
+    }
+
+    .section1-right-column-artile1, .section1-right-column-artile1 p {
+      margin-top: -15px;
+      color: black;
+    }
+
+    .small-article-header {
+      color: black;
+      font-size: 13px;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .six-thumbs {
+      display: grid;
+      grid-template-rows: 17% 17% 16% 17% 16% 17%;
+      height: 650px;
+      margin-top: 20px;
+    }
+
+    .thumb-article {
+      border-top: 1px solid #ccc;
+      display: grid;
+      grid-template-columns: 30% 70%;
+      grid-column-gap: 10px;
+    }
+    .thumb-img {
+      margin-top: 25px;
+      height: 100px;
+      width: 72px;
+    }
+
+    .thumb-text {
+      margin-top: 15px;
+    }
+
+    .content-column-section2 {
+      height: 570px;
+      margin-right: 25px;
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 50% 50%;
+      grid-column-gap: 15px;
+    }
+
+    .video-article-img {
+      width: 375px;
+      object-fit: cover;
+    }
+
+    .video-article-header {
+      font-size: 19px;
+      font-weight: bold;
+      margin-top: 2px;
+      color: black;
+    }
+
+    .content-column-section3 {
+      margin-right: 25px;
+      margin-top: 45px;
+      display: grid;
+      grid-template-rows: 200px 200px 200px 200px 200px;
+      grid-column-gap: 15px;
+    }
+
+    .more-news {
+      display: flex;
+      border-top: 2px solid #ccc;
+      display: grid;
+      grid-template-columns: 32% 68%;
+      flex: 1;
+    }
+
+    .more-news-img {
+      margin-top: 15px;
+      flex: 1;
+      width: 235px;
+      object-fit: cover;
+    }
+
+    .more-news-text {
+      margin-top: 25px;
+      margin-left: 15px;
+      flex: 1;
+    }
+
+    .article-summary {
+      margin-top: -5px;
+      color: black;
+    }
+
+    .scalable-img,
+    .center-ad,
+    .ad-graphics  {
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    /* img {
+      max-width: 100%;
+      object-fit: contain;
+    } */
+
+    /* ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~*/
+    @media only screen and (max-width: 1000) {
+      .section1-grid {
+        display: flex;
+        /* flex-direction: column; */
+      }
+
+      .section1-left-column {
+        flex: 1;
+      }
+      .section1-right-column {
+        flex: 1;
+      }
+
+      .content-column {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content-column-section1,
+      .content-column-section2,
+      .content-column-section3 {
+        flex: 1;
+      }
+
+    }
+
+    /* ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~*/
+    @media only screen and (max-width: 768px) {
+      /* For mobile phones: */
+
+      /* Parent ----------------------------------------- */
+      .content-top {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Child 1 of content-top */
+      .content-top-article {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+
+      /* Child 2 of content-top */
+      .top-ad {
+        margin: 0px 40px;
+        flex: 1;
+      }
+
+      /* Parent ----------------------------------------- */
+      .body-grid {
+        display: flex;
+        flex-direction: column;
+        /* align-content: stretch; */
+      }
+
+      /* Child 1 of body-grid */
+      .content-column {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        /* background-color: yellow; */
+      }
+
+      /* Child 2 of body-grid */
+      .ad-column {
+        text-align: center;
+        margin-top: 30px;
+        flex: 1;
+      }
+
+      /* Styling in ad-column */
+      .ad-graphics {
+        width: 230px;
+      }
+
+      /* Parent ----------------------------------------- */
+      /* .content-column */
+      /* Child 1 of content-column */
+      .content-column-section1 {
+        flex: 1;
+        /* Why did I have to put this height in to satisfy Chrome? */
+        /* height: 1980px; */
+        height: 2200px;
+      }
+
+      /* Child 2 of content-column */
+      .content-column-section2 {
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        margin-left: 25px;
+        flex: 1;
+        /* Why did I have to put this height in to satisfy Chrome? */
+        /* height: 1100px; */
+        height: 1300px;
+        /* background-color: lime; */
+      }
+
+      /* Child 3 of content-column */
+      .content-column-section3 {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        margin-top: -20px;
+        /* background-color: pink; */
+      }
+
+      .body-container {
+        height: 100%;
+        }
+
+      .more-news {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        margin-top: 20px;
+      }
+
+      .video-article {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+
+      .img-container {
+        flex: 1;
+      }
+
+      .text-container {
+        flex: 1;
+      }
+
+      .blue-section-header {
+        width: 100%;
+        padding: 10px 0px;
+      }
+
+      .more-news-img {
+        margin-left: 8px;
+      }
+
+      .bottom-ad {
+        margin-top: 20px;
+      }
+
+      .center-ad {
+        margin-top: 20px;
+      }
+
+      .section1-grid {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .section1-left-column {
+        flex: 1;
+      }
+      .section1-right-column {
+        flex: 1;
+      }
+
+      .section1-right-article2{
+        margin-top: 35px;
+      }
+
+      .section1-right-article1{
+        margin-top: 20px;
+      }
+      .header {
+        display: flex;
+        flex-direction: row;
+      }
+      .header1, .header3, .header5, .header6 {
+        flex: 1;
+        align-self: auto;
+      }
+
+      .scalable-img,
+      .center-ad,
+      .ad-graphics  {
+        max-width: 100%;
+        object-fit: contain;
+      }
+
+      .video-article-img {
+        max-width:100%;
+        object-fit: cover;
+      }
+
+      /* ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~ ~%~*/
+    }
+
+  </style>
+
+
+  </head>
+  <body>
+    <div class="container">
+
+      <!-- Header ***************************************************************** -->
+      <div class="header">
+
+        <div class="header1">
+          <a href="https://www.inforum.com" target="top"><img src="./images/hamburger-menu.png" width="30px" class="hamburger-menu"></a>
+        </div>
+        <div class="header2"></div>
+        <div class="header3">
+          <a href="https://www.inforum.com" target="top"><img src="./images/inforum-logo.png" height="35px" class="hamburger-menu"></a>
+        </div>
+        <div class="header4"></div>
+        <div class="header5">
+          <a href="https://www.inforum.com/news/weather/" target="top"><img src="./images/weather-icon.png" height="25px" class="weather-icon"></a>
+        </div>
+        <div class="header6" >
+          <h5 class="fcc">FCC MARKET CHANNELS &nbsp; &nbsp;<img src="./images/down-arrow.png" height="10px" class="hamburger-menu"></h5>
+        </div>
+
+      </div> <!-- END Header -->
+
+      <div class="content-top">
+
+        <!-- Top article ***************************************************************** -->
+          <div class="content-top-article">
+              <a style="display:block" href="https://www.inforum.com/lifestyle/travel/4304413-drive-nowhere-can-you-live-car-less">
+                <div class="content-top-article-img">
+                  <img src="./images/top-img-scaled.jpg" height="450" class="scalable-img">
+                </div>
+              </a>
+              <div class="content-top-article-right">
+                <div class="article-box">
+                  <h5 class="blue-header"><a href="https://www.inforum.com/lifestyle/">LIFESTYLES ></a></h5>
+
+                  <a style="display:block" href="https://www.inforum.com/lifestyle/travel/4304413-drive-nowhere-can-you-live-car-less">
+                    <div class="article-link">
+                      <h3 class="article-title">DRIVE NOWHERE: CAN YOU LIVE CAR-LESS?</h3>
+                      <p>As a farm-girl from rural South Dakota, I started driving at 14 years old. Now my hometown friends categorize me as a "city-slicker," discussing commutes in minutes rather than miles.</p>
+                    </div>
+                  </a>
+
+                  <br>
+                  By <a href="#" class="blue-header">April E. Knutson</a> Today at 9:33 a.m.
+                </div>
+              </div>
+
+          </div> <!-- END content-top-article-->
+
+          <!-- Top ad ***************************************************************** -->
+          <div class="top-ad">
+            <br>
+            <center>
+              <img src="./images/top-ad.png" height="150" style="cursor: pointer;" class="scalable-img">
+            </center>
+          </div>
+      </div> <!-- END content-top-->
+
+      <!-- Main body ***************************************************************** -->
+      <div class="content-body">
+        <div class="body-container">
+
+          <div class="body-grid">
+            <!-- content column ************************************* -->
+            <div class="content-column">
+
+              <!-- content column section 1 ************************* -->
+              <div class="content-column-section1">
+                <div class="section1-grid">
+
+                  <div class="section1-left-column">
+                    <div class="blue-section-header">
+                      LATEST STORIES
+                    </div>
+                    <br>
+                    <a style="display:block" href="https://www.inforum.com/news/4305449-officers-shoot-man-gunfight-se-minnesota">
+                      <img src="./images/police-line.jpg" width="250" class="scalable-img">
+                      <p class="small-article-header">Officers shoot man in gunfight in SE Minnesota</p>
+                    </a>
+
+                    <div class="six-thumbs">
+
+                      <a style="display:block" href="https://www.inforum.com/opinion/4305313-port-censors-are-coming-hbos-new-alternate-history-show-about-civil-war">
+                      <div class="thumb-article">
+                          <div class="thumb-img"><img src="./images/civil-war-thumb.jpg" width="72" height="60"></div>
+                          <div class="thumb-text"><p class="small-article-header">The censors are coming for HBO’s new alternate history show about the Civil War</p></div>
+                      </div>
+                      </a>
+
+                      <a style="display:block" href="https://www.inforum.com/news/4305259-biker-hit-car-near-mcdonalds-fargo">
+                      <div class="thumb-article">
+                          <div class="thumb-img"><img src="./images/biker-hit.jpg" width="72" height="60"></div>
+                          <div class="thumb-text"><p class="small-article-header">Biker hit by car near McDonald's in Fargo</p></div>
+                      </div>
+                      </a>
+
+                      <a style="display:block" href="https://www.inforum.com/business/4304513-catering-business-works-large-corporate-events-customer-appreciation-gigs">
+                      <div class="thumb-article">
+                          <div class="thumb-img"><img src="./images/catering.jpg" width="72" height="60"></div>
+                          <div class="thumb-text"><p class="small-article-header">Catering business works large corporate events, customer appreciation gigs</p></div>
+                      </div>
+                      </a>
+
+                      <a style="display:block" href="https://www.inforum.com/opinion/4305313-port-censors-are-coming-hbos-new-alternate-history-show-about-civil-war">
+                      <div class="thumb-article">
+                          <div class="thumb-img"><img src="./images/civil-war-thumb.jpg" width="72" height="60"></div>
+                          <div class="thumb-text"><p class="small-article-header">The censors are coming for HBO’s new alternate history show about the Civil War</p></div>
+                      </div>
+                      </a>
+
+                      <a style="display:block" href="https://www.inforum.com/news/4305259-biker-hit-car-near-mcdonalds-fargo">
+                      <div class="thumb-article">
+                          <div class="thumb-img"><img src="./images/biker-hit.jpg" width="72" height="60"></div>
+                          <div class="thumb-text"><p class="small-article-header">Biker hit by car near McDonald's in Fargo</p></div>
+                      </div>
+                      </a>
+
+                      <a style="display:block" href="https://www.inforum.com/business/4304513-catering-business-works-large-corporate-events-customer-appreciation-gigs">
+                      <div class="thumb-article">
+                          <div class="thumb-img"><img src="./images/catering.jpg" width="72" height="60"></div>
+                          <div class="thumb-text"><p class="small-article-header">Catering business works large corporate events, customer appreciation gigs</p></div>
+                      </div>
+                      </a>
+
+                    </div>
+                  </div> <!-- END section1-left-column-->
+
+
+
+                  <div class="section1-right-column">
+
+                      <!-- Article 1 -->
+                    <div class="section1-right-article1">
+                      <a style="display:block" href="https://www.inforum.com/news/4305423-john-kelly-chief-staff-scaramucci-booted-white-house-communications-director">
+                        <div class="section1-right-column-img1">
+                          <img src="./images/scaramucci-cropped.jpg" height="283" class="scalable-img">
+                        </div>
+                        <div class="section1-right-column-artile1">
+                          <h3 class="article-title">TRUMP REMOVES SCARAMUCCI AS WHITE HOUSE COMMUNICATIONS DIRECTOR</h3>
+                          <p>Anthony Scaramucci has been removed as White House communications director at the request of White House Chief of Staff John F. Kelly, just days after being named to the job, according to two people with knowledge of the decision.</p>
+                        </div>
+                      </a>
+                      By <a href="#" class="blue-header">Washington Post</a> Today at 3:22 p.m. &nbsp; | &nbsp; <a href="https://www.inforum.com/news/" class="blue-header-inline">News ></a>
+                    </div>
+
+                    <!-- <br><br><br> -->
+                    <!-- Article 2 -->
+                  <div class="section1-right-article2">
+                    <a style="display:block" href="https://www.inforum.com/news/4305271-justice-two-may-be-beaten-path-its-gaining-following">
+                      <div class="section1-right-column-img2">
+                        <img src="./images/justice-two.jpg" height="283" class="scalable-img">
+                      </div>
+                      <div class="section1-right-column-artile1">
+                        <h3 class="article-title">JUSTICE TWO MAY BE OFF BEATEN PATH, BUT IT'S GAINING A FOLLOWING</h3>
+                        <p>The group of women outside the Justice Two Coffeehouse and Eatery was having a good time sharing food and stories.</p>
+                      </div>
+                    </a>
+                    By <a href="#" class="blue-header">David Olson</a> Today at 9:46 A.m. &nbsp; | &nbsp; <a href="https://www.inforum.com/news/" class="blue-header-inline">News ></a>
+
+                  </div>
+
+                </div>
+                </div> <!-- END section1-grid -->
+
+                <center>
+                  <br><br><br>
+                <div class="blue-section-header">
+                  TOP VIDEOS
+                </div>
+              </center>
+
+              </div> <!-- END content-column-section1 -->
+
+              <!-- content column section 2 ************************* -->
+              <div class="content-column-section2">
+
+                <a style="display:block" href="https://www.inforum.com/entertainment/4305305-gone-country-or-mission-mars-area-music-fans-torn-between-two-big-shows">
+                <div class="video-article">
+                  <div class="img-container"><img src="./images/big-shows.jpg" width="375" height="200" class="video-article-img"></div>
+                  <div class="text-container"><p class="video-article-header">Gone country or mission to Mars? Area music fans torn between two big shows</p></div>
+                </div>
+                </a>
+
+                <a style="display:block" href="https://www.inforum.com/sports/4305461-twins-trade-all-star-closer-brandon-kintzler-nationals">
+                <div class="video-article">
+                  <div class="img-container"><img src="./images/twins.jpg" width="375" height="200" class="video-article-img"></div>
+                  <div class="text-container"><p class="video-article-header">Twins trade All-Star closer Brandon Kintzler to Nationals</p></div>
+                </div>
+                </a>
+
+                <a style="display:block" href="https://www.inforum.com/sports/4305502-bison-begin-football-practice-without-proverbial-target-their-back">
+                <div class="video-article">
+                  <div class="img-container"><img src="./images/bison.jpg" width="375" height="200" class="video-article-img"></div>
+                  <div class="text-container"><p class="video-article-header">Bison begin football practice without the proverbial target on their back</p></div>
+                </div>
+                </a>
+
+                <a style="display:block" href="https://www.inforum.com/news/4306049-tgi-fridays-building-demolished-chick-fil-permit-approved">
+                <div class="video-article">
+                  <div class="img-container"><img src="./images/tgi.jpg" width="375" height="200" class="video-article-img"></div>
+                  <div class="text-container"><p class="video-article-header">TGI Friday's building demolished; Chick-fil-A permit approved</p></div>
+                </div>
+                </a>
+
+              </div> <!-- END content-column-section2 -->
+
+              <br>
+              <center>
+                <img src="./images/ac10.png" height="80" style="cursor: pointer; margin-right: 35px;" class="center-ad">
+              </center>
+
+              <center>
+                <br><br><br>
+              <div class="blue-section-header">
+                MORE NEWS
+              </div>
+            </center>
+
+            <!-- content column section 3 ************************* -->
+            <div class="content-column-section3">
+
+              <div class="more-news" style="border: none;">
+                <a style="display:block" href="https://www.inforum.com/sports/4306022-its-here-anybody-baseball-field-built-farm-near-fertile-minn-becoming-summer-spot">
+                  <div class="more-news-img"><img src="./images/baseball-field.jpg" width="235" height="135" class="more-news-img"></div>
+                  <div class="more-news-text"><p class="video-article-header">'It's here for anybody': Baseball field built on a farm near Fertile, Minn., becoming summer spot</p>
+                    <p class="article-summary">Ryan Strem, 38, glowed as another Tuesday night of baseball at Strem Field was approaching.He was up at 4 a.m. to make sure the sprinkler system was keeping the grass in the outfield a perfect green.</p>
+                </a>
+                  By <a href="#" class="blue-header">Dave Olson</a> Today at 9:46 A.m. &nbsp; | &nbsp; <a href="https://www.inforum.com/news/" class="blue-header-inline">News ></a>
+                </div>
+              </div>
+
+              <div class="more-news">
+                <a style="display:block" href="https://www.inforum.com/news/4305189-could-whale-muskie-be-one-largest-ever-caught-nd">
+                  <div class="more-news-img"><img src="./images/muskie.jpg" width="235" height="135" class="more-news-img"></div>
+                  <div class="more-news-text"><p class="video-article-header">Could this whale of a muskie be one of the largest ever caught in N.D.?</p>
+                    <p class="article-summary">This is not a story of the "one that got away." Not this time. This is about the fish of a lifetime. A monster. A beast. Unbelievable but true!</p>
+                </a>
+                  By <a href="#" class="blue-header">Dave Olson</a> Today at 9:46 A.m. &nbsp; | &nbsp; <a href="https://www.inforum.com/news/" class="blue-header-inline">News ></a>
+                </div>
+              </div>
+
+              <div class="more-news">
+                <a style="display:block" href="https://www.inforum.com/business/4306063-mother-daughter-bring-their-vision-boutique-everyone-downtown-fargo">
+                  <div class="more-news-img"><img src="./images/boutique.jpg" width="235" height="135" class="more-news-img"></div>
+                  <div class="more-news-text"><p class="video-article-header">Mother, daughter bring their vision of a boutique for everyone to downtown Fargo</p>
+                    <p class="article-summary">Not long ago, Kelly Falk and Marceia Andreasen enjoyed shopping together for the latest looks at clothing boutiques. The mother and daughter are now bringing their vision of a boutique with something for everyone.</p>
+                </a>
+                  By <a href="#" class="blue-header">Dave Olson</a> Today at 9:46 A.m. &nbsp; | &nbsp; <a href="https://www.inforum.com/news/" class="blue-header-inline">News ></a>
+                </div>
+              </div>
+
+              <div class="more-news">
+                <a style="display:block" href="https://www.inforum.com/sports/4306022-its-here-anybody-baseball-field-built-farm-near-fertile-minn-becoming-summer-spot">
+                  <div class="more-news-img"><img src="./images/baseball-field.jpg" width="235" height="135" class="more-news-img"></div>
+                  <div class="more-news-text"><p class="video-article-header">'It's here for anybody': Baseball field built on a farm near Fertile, Minn., becoming summer spot</p>
+                    <p class="article-summary">Ryan Strem, 38, glowed as another Tuesday night of baseball at Strem Field was approaching.He was up at 4 a.m. to make sure the sprinkler system was keeping the grass in the outfield a perfect green.</p>
+                </a>
+                  By <a href="#" class="blue-header">Dave Olson</a> Today at 9:46 A.m. &nbsp; | &nbsp; <a href="https://www.inforum.com/news/" class="blue-header-inline">News ></a>
+                </div>
+              </div>
+
+              <div class="more-news">
+                <a style="display:block" href="https://www.inforum.com/news/4305189-could-whale-muskie-be-one-largest-ever-caught-nd">
+                  <div class="more-news-img"><img src="./images/muskie.jpg" width="235" height="135" class="more-news-img"></div>
+                  <div class="more-news-text"><p class="video-article-header">Could this whale of a muskie be one of the largest ever caught in N.D.?</p>
+                    <p class="article-summary">This is not a story of the "one that got away." Not this time. This is about the fish of a lifetime. A monster. A beast. Unbelievable but true!</p>
+                </a>
+                  By <a href="#" class="blue-header">Dave Olson</a> Today at 9:46 A.m. &nbsp; | &nbsp; <a href="https://www.inforum.com/news/" class="blue-header-inline">News ></a>
+                </div>
+              </div>
+
+            </div> <!-- END content-column-section3 -->
+
+
+            </div> <!-- END content-column -->
+
+            <!-- ad column ************************************* -->
+            <div class="ad-column">
+              <div class="ad-img"><img src="./images/ac1.jpg" class="ad-graphics"></div>
+              <div class="ad-img"><img src="./images/ac2.jpg" class="ad-graphics"></div>
+              <div class="ad-img"><img src="./images/ac3.jpg" class="ad-graphics"></div>
+              <div class="ad-img"><img src="./images/ac4.jpg" class="ad-graphics"></div>
+              <div class="ad-img"><img src="./images/ac5.jpg" class="ad-graphics"></div>
+              <div class="ad-img"><img src="./images/ac6.jpg" class="ad-graphics"></div>
+              <div class="ad-img"><img src="./images/ac7.jpg" class="ad-graphics"></div>
+              <div class="ad-img"><img src="./images/ac8.jpg" class="ad-graphics"></div>
+              <div class="ad-img"><img src="./images/ac9.jpg" class="ad-graphics"></div>
+            </div> <!-- END ad-column -->
+          </div> <!-- END body-grid -->
+        </div> <!-- END body-container -->
+      </div> <!-- END content-body -->
+
+
+      <!-- bottom ad  ***************************************************************** -->
+      <div class="bottom-ad">
+        <div class="bottom-ad-container">
+
+          <br>
+          <center>
+            <img src="./images/bottom-ad.png" height="150" style="cursor: pointer;" class="center-ad"><br><br>
+          </center>
+
+        </div>
+      </div> <!-- END bottom-ad -->
+
+      <!-- footer  ***************************************************************** -->
+      <div class="footer">
+        <br>
+        <div class="footer-box">
+
+          <div class="footer-grid">
+
+            <div class="footer-columns">
+              <div class="footer-col">
+                <h3>ACCOUNT</h3>
+                <a href="https://newspaper.forumcomm.com/cgi-bin/cmo_cmo.sh/custservice/web/login2.hmtl?siteid=TF" class="white-links">Manage My Account</a><br>
+                <a href="https://www.inforum.com/privacy" class="white-links">Privacy Policy</a><br>
+                <a href="https://www.inforum.com/terms" class="white-links">Terms and Conditions</a>
+              </div>
+              <div class="footer-col">
+                <h3>NEWSPAPER</h3>
+                <a href="https://allaccess.forumcomm.com/allaccess/inforum" class="white-links">Subscribe to the Paper</a><br>
+                <a href="https://newspaper.forumcomm.com/cgi-bin/cmo_cmo.sh/custservice/web/login2.html?siteid=TFEE&authonly=yes&AuthControlID=TF&BP=OK&ID=customer&d=" class="white-links">Access E-Paper</a>
+              </div>
+              <div class="footer-col">
+                <h3>CONTACT</h3>
+                <a href="https://www.inforum.com/contact-us" class="white-links">Contact Us</a><br>
+                <a href="mailto:customerservice+inforum@forumcomm.com" class="white-links">Get Website Help</a><br>
+                <a href="http://www.forumcomm.com/careers" class="white-links">Work With Us</a>
+              </div>
+              <div class="footer-col">
+                <h3>MORE</h3>
+                <a href="https://www.jobshq.com/" class="white-links">JobsHQ</a><br>
+                <a href="http://www.carshq.com/" class="white-links">CarsHQ</a><br>
+                <a href="https://www.homeshq.com/fargo-nd" class="white-links">HomesHQ</a><br>
+                <a href="http://www.northlandoutdoors.com/" class="white-links">Northland Outdoors</a><br>
+                <a href="http://www.agweek.com/" class="white-links">Agweek</a><br>
+                <a href="http://impact.areavoices.com/" class="white-links">Impact Magazine</a>
+              </div>
+            </div> <!-- END footer-columns -->
+
+            <div class="footer-socials">
+              <h3>SOCIAL</h3>
+              <img src="./images/soc-media-icons.png" height="35px" class="ad-graphics">
+            </div>
+            <div class="hr"></div>
+            <center>
+              <p class="white-text">© INFORUM and <a href="http://www.forumcomm.com/" class="white-links">Forum Communications Company</a><br>
+                101 5th Street North, Fargo,ND 58102 | (701) 235-7311</p>
+            </center>
+
+          </div> <!-- END footer-grid -->
+        </div> <!-- END footer-box -->
+      </div> <!-- END footer -->
+
+    </div> <!-- END container -->
+
+  </body>
+</html>
